@@ -3,105 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 - Melo</title>
-    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/privacy.html">
-    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/privacy.zh.html">
+    <title>Melo 隐私政策</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        h1 { font-size: 24px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h2 { font-size: 18px; margin-top: 30px; }
-        ul { padding-left: 20px; }
-        li { margin: 8px 0; }
-        .date { color: #666; font-size: 14px; }
-        .language-switch {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        .language-switch strong { color: #111; }
-        a { color: #007aff; }
-        hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.75; color: #222; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: 8px; }
+        h2 { margin-top: 32px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+        h3 { margin-top: 20px; }
+        .updated { color: #666; font-size: 0.9em; }
+        ul { padding-left: 22px; }
+        li { margin: 6px 0; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
     </style>
 </head>
 <body>
-    <nav class="language-switch" aria-label="语言">
-        <a href="privacy.html" lang="en">English</a>
-        <strong>简体中文</strong>
-    </nav>
-
-    <h1>隐私政策</h1>
-    <p class="date">最后更新：2026-06-01</p>
+    <h1>Melo 隐私政策</h1>
+    <p class="updated">最后更新：2026-06-24</p>
+    <p><a href="privacy.html">English</a></p>
 
     <h2>简介</h2>
-    <p>Melo（以下简称“我们”）是由个人开发者运营的个人项目。本页面说明你在使用 Melo 应用时，关于个人数据收集、使用、披露以及相关选择的政策。</p>
+    <p>Melo 是由个人开发者运营的个人项目。本政策说明 Melo 系列 macOS 应用在 Mac App Store 上收集、使用、披露信息的做法，涵盖我们发布的所有应用。</p>
+
+    <h2>本政策覆盖的应用</h2>
+    <p>本政策适用于我们在 Mac App Store 上分发的所有 Melo 系列应用，无论你是单独安装还是一起安装：</p>
+    <ul>
+        <li><strong>Melo Suite</strong> &mdash; 旗舰应用，把所有 Melo 工具（截图、标注、OCR、取色、剪贴板历史、菜单栏布局、语音转写）打包在一个 bundle 内。</li>
+        <li><strong>Melo Capture</strong> &mdash; 独立的截图与标注应用。</li>
+        <li><strong>Melo OCR</strong> &mdash; 独立的屏幕文字识别应用。</li>
+        <li><strong>Melo Clip</strong> &mdash; 独立的剪贴板历史应用。</li>
+        <li><strong>Melo Color Picker</strong> &mdash; 独立的屏幕取色应用。</li>
+    </ul>
+    <p>每个应用都可以独立安装、独立使用。下文描述的隐私做法对所有 Melo 应用 <strong>统一适用</strong>，不存在某个 app 行为偏离本页说明的情况。</p>
 
     <h2>我们收集的信息</h2>
-    <h3>你提供或在本机产生的数据</h3>
+
+    <h3>你在本机产生或提供的数据</h3>
     <ul>
-        <li><strong>剪贴板历史</strong>：Melo 会在你的设备本地保存剪贴板内容，用于提供剪贴板历史功能。这些数据不会传输到我们的服务器。</li>
-        <li><strong>颜色历史</strong>：你通过取色工具选取的颜色值会保存在本机。</li>
-        <li><strong>自定义语言包</strong>：你创建的自定义翻译内容会保存在本机。</li>
+        <li><strong>剪贴板历史</strong>（Melo Suite、Melo Clip）&mdash; 你在 Melo Clip 运行时复制的文本、链接、图片引用、颜色值。仅保存在本机设备上，仅用于驱动应用内的剪贴板历史列表，<strong>永远不会</strong>传输到本机以外。</li>
+        <li><strong>颜色历史</strong>（Melo Suite、Melo Color Picker）&mdash; 你最近采样的 20 个颜色值。仅保存在本机，<strong>永远不会</strong>传输到本机以外。</li>
+        <li><strong>自定义语言包</strong>（Melo Suite、Melo OCR）&mdash; 如果你创建或导入 OCR 的自定义翻译包，源语言/目标语言标识、已下载的语言包数据保存在本机。</li>
+        <li><strong>截图与标注</strong>（Melo Suite、Melo Capture）&mdash; 你截取的每张截图、你选中的矩形区域、你在标注编辑器里绘制的笔画/文字/标注。只保存到你通过 macOS 保存对话框选择的目标文件夹。<strong>永远不会</strong>传输到本机以外。</li>
+        <li><strong>OCR 结果</strong>（Melo Suite、Melo OCR）&mdash; 每次识别出的文字。仅保存在本机的应用内 OCR 历史中。<strong>永远不会</strong>传输到本机以外。</li>
     </ul>
 
     <h3>自动收集的信息</h3>
-    <p>当前 App Store 版本的 Melo 不包含第三方统计、广告 SDK 或崩溃上报服务。</p>
+    <p>无。当前 App Store 版本的每一个 Melo app 都<strong>不包含</strong>第三方统计、广告 SDK、崩溃上报服务。没有遥测、没有使用统计、没有任何形式的远程日志。</p>
 
-    <h2>我们如何使用信息</h2>
-    <p>Melo 仅将本地应用数据用于：</p>
+    <h2>我们如何使用你的信息</h2>
+    <p>Melo 仅将本机存储的数据用于：</p>
     <ul>
-        <li>提供和维护应用功能</li>
-        <li>改善用户体验</li>
-        <li>修复问题和技术故障</li>
-        <li>开发新功能</li>
+        <li>提供并维护你正在使用的那款应用的功能（例如：显示剪贴板历史、显示你采样的颜色）。</li>
+        <li>在你已安装的版本上改善用户体验、修复 bug。</li>
+        <li>在后续更新中开发新功能。</li>
     </ul>
+    <p>我们不构建用户画像、不投放广告、也不以任何目的向第三方出售或共享任何数据。</p>
 
-    <h2>数据存储</h2>
-    <p>Melo 收集或产生的数据均<strong>保存在你的设备本地</strong>。我们无法访问这些数据。你可以通过以下方式删除相关数据：</p>
+    <h2>数据存储与保留</h2>
+    <p>上述所有数据都保存在你的 Mac 本地，存放在你正在使用的 Melo app 的标准 macOS 应用支持 / 容器目录中。开发者<strong>无法远程访问</strong>这些数据。你可以随时通过以下方式删除：</p>
     <ul>
-        <li>使用应用内的清除历史功能</li>
-        <li>卸载应用</li>
+        <li>使用 app 内置的&ldquo;清除历史&rdquo;按钮（剪贴板历史 / 颜色历史 / 截图历史）。</li>
+        <li>通过 Finder 删除你保存到目标文件夹的截图。</li>
+        <li>卸载 app &mdash; macOS 会自动删除该 app 的本地容器。</li>
     </ul>
+    <p>截图和 OCR 结果会保留在你选定的文件夹 / 历史里，直到你自己删除或卸载 app。我们在服务器上<strong>不保留</strong>任何副本。</p>
 
-    <h2>我们请求的系统权限</h2>
-    <p>Melo 可能需要以下系统权限来提供对应功能：</p>
+    <h2>申请的系统权限</h2>
+    <p>Melo app 只在使用对应功能、且由你主动触发时才会请求以下系统权限。所有 Melo app 遵守同一规则：启动时<strong>不</strong>请求任何权限，<strong>不</strong>自动请求任何权限，macOS 弹出系统提示之前你总是先看到一段中文/英文的说明。</p>
+
+    <h3>屏幕录制</h3>
+    <p><strong>权限用途。</strong>macOS 通过&ldquo;屏幕录制&rdquo;权限让 app 能够读取屏幕上的像素。请求该权限的 Melo app 仅在以下<strong>由你主动触发</strong>的功能中使用：</p>
     <ul>
-        <li><strong>屏幕录制</strong>：用于截图、区域截屏、标注和 OCR 功能。</li>
-        <li><strong>辅助功能</strong>：用于快捷键、自动粘贴等自动化功能。</li>
-        <li><strong>麦克风</strong>：用于语音转文字功能。</li>
-        <li><strong>语音识别</strong>：用于将音频转换为文字。</li>
+        <li><strong>区域截图</strong>（Melo Suite、Melo Capture）&mdash; 你按下全局快捷键、拖选一个矩形、确认后，生成该矩形区域的一张静态图像。图像随后通过 macOS 保存对话框让你保存，或复制到剪贴板。不会有视频、不会有音频、不会有持续录制。</li>
+        <li><strong>屏幕文字识别（OCR）</strong>（Melo Suite、Melo OCR）&mdash; 你按下全局快捷键、通过系统截图工具选中一个矩形区域、确认后，那张静态图像会用 Apple Vision 框架做识别。识别出的文字显示在 app 中、复制到剪贴板、保存到本机 OCR 历史。图像本身<strong>不会</strong>传输到任何地方。</li>
+        <li><strong>菜单栏项目缩略图</strong>（仅 Melo Suite）&mdash; 当你<strong>显式启用</strong>&ldquo;菜单栏布局控制&rdquo;功能时，Melo 会为每个你选择折叠的 macOS 菜单栏项目生成一张静态缩略图。缩略图在每次启用时重新生成、在进程内渲染、<strong>不会</strong>传输到任何地方。</li>
     </ul>
+    <p><strong>通过屏幕录制收集的数据。</strong>区域截图和 OCR：在你松开鼠标的那一瞬间，截取你所选矩形区域的一张静态 PNG。菜单栏折叠：每张菜单栏项目的小型静态缩略图。</p>
+    <p><strong>用途。</strong>这张静态图像仅用于：① 保存你明确要求保存的截图；② 识别你明确要求识别的文字；③ 渲染你明确启用的折叠视图。这张静态图像<strong>不会</strong>用于训练任何模型，<strong>不会</strong>发送到任何服务器，<strong>不会</strong>分享给任何第三方。</p>
+    <p><strong>共享。</strong>屏幕录制产生的数据<strong>永远不会</strong>分享给任何第三方。没有遥测上传、没有分析 SDK、没有针对捕获像素的服务端处理。</p>
+    <p><strong>存储。</strong>这张静态图像<strong>只</strong>保存在你本机：要么是你在 macOS 保存对话框中选择的文件夹，要么是本机 OCR / 截图历史，要么是 OCR 完成后立刻被覆盖并删除的临时文件。我们<strong>不会</strong>把它存到任何服务器上。</p>
+    <p><strong>保留。</strong>这张静态图像会保留在你的设备上，直到你删除它（删除文件、清除历史、卸载 app）。我们<strong>不</strong>在服务器上保留任何副本 &mdash; 我们<strong>不</strong>运营任何接收它的服务器。</p>
+    <p><strong>本政策中覆盖该数据的原文。</strong>本节上述条款（用途、数据、共享、存储、保留）即为对应原文。其他相关章节：&ldquo;数据存储&rdquo;、&ldquo;数据共享&rdquo;、&ldquo;你的权利&rdquo;。</p>
+
+    <h3>辅助功能</h3>
+    <p>仅在 Melo Suite 和 Melo Clip 中使用：当你选中某条剪贴板历史记录并要求 Melo 把它粘贴到你正在使用的 app 时才申请。Melo 仅用该权限完成那一次粘贴动作，不会监控其他 app、不会收集辅助功能数据，且请求只在你的明确操作下触发。</p>
+
+    <h3>麦克风</h3>
+    <p>仅 Melo Suite 用于语音转写功能。音频仅在你主动开始的录制时长内被本机采集，通过 Apple Speech 框架在本机转写为文字，<strong>不会</strong>传输到本机以外。</p>
+
+    <h3>语音识别</h3>
+    <p>仅 Melo Suite 用于语音转写功能。音频由 Apple 的本机 Speech 框架处理。除了本机捕获历史中保存的内容，我们<strong>无法</strong>访问音频或转写结果。</p>
+
+    <h3>通知</h3>
+    <p>仅 Melo Suite 用于在长时间任务（转写、截图）完成时提示你。我们<strong>不</strong>从服务器发送推送通知。</p>
 
     <h2>数据共享</h2>
-    <p>我们<strong>不会出售、交易或转让</strong>你的个人数据。当前 App Store 版本不会将本地记录上传到我们的服务器。</p>
+    <p>我们<strong>不</strong>出售、交易或以其他方式把你的个人数据转让给外部机构。当前每个 Melo app 的版本都<strong>不</strong>把本地记录、屏幕录制像素、OCR 结果或任何其他数据上传到我们运营的服务器。</p>
+    <p>当你使用系统框架（Speech 框架、App Store 分发、沙盒文件访问）时，Apple 可能会以你的名义处理数据。这些过程受 Apple 自己的隐私政策约束，不受本政策约束。</p>
 
     <h2>你的权利</h2>
-    <p>你可以：</p>
     <ul>
-        <li>访问保存在本机的个人数据</li>
-        <li>删除本机数据</li>
-        <li>随时在系统设置中撤销应用权限</li>
+        <li>访问你的个人数据 &mdash; 仅保存在本机。</li>
+        <li>随时通过 app 内置控件或卸载 app 来删除本机数据。</li>
+        <li>随时通过 <strong>系统设置 &rarr; 隐私与安全性</strong> 撤销任何权限。</li>
     </ul>
-
-    <h2>联系我</h2>
-    <p>如对本隐私政策有任何问题，请通过以下方式联系我：</p>
-    <ul>
-        <li>邮箱：<a href="mailto:lvjianhua75@me.com">lvjianhua75@me.com</a></li>
-    </ul>
-
-    <hr>
-    <h2>政策变更</h2>
-    <p>我们可能会不时更新本隐私政策。更新后会在本页面发布新版本，并更新“最后更新”日期。</p>
+    <p>因为我们<strong>不</strong>在服务器上收集你的数据，所以不存在可供访问、导出或删除的服务器端记录。上述所有操作都发生在你的 Mac 本机上。</p>
 
     <h2>13 岁以下儿童</h2>
-    <p>本应用并非面向 13 岁以下儿童。我们不会有意收集 13 岁以下儿童的个人信息。</p>
+    <p>Melo 系列应用<strong>不</strong>面向 13 岁以下儿童，我们也不会有意收集该年龄段儿童的个人信息。</p>
+
+    <h2>政策变更</h2>
+    <p>更新会在本页面发布，并更新&ldquo;最后更新&rdquo;日期。如果变更涉及上述屏幕录制或其他系统权限的处理方式，页面顶部会特别标注。</p>
+
+    <h2>联系我</h2>
+    <ul>
+        <li>邮箱：lvjianhua75@me.com</li>
+    </ul>
 </body>
 </html>
