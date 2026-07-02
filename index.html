@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help &amp; FAQ - Melo</title>
+    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/index.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/index.zh.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        main h3 { font-size: 16px; margin: 24px 0 8px; }
+        main p, main li { font-size: 15px; }
+        main .lede { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+        main .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        details.faq { margin-bottom: 14px; }
+        details.faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 4px 0;
+            color: var(--fg);
+        }
+        details.faq summary:hover { color: var(--accent); }
+        details.faq[open] summary { color: var(--accent); }
+        details.faq p { margin: 6px 0 0; color: var(--muted); }
+        code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+        kbd { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.9em; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <h1>Melo Docs</h1>
+            <p class="subtitle">Help, support &amp; legal</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Help &amp; FAQ</a></li>
+                    <li><a href="accessibility.html">Auto-Paste Guide</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <strong>English</strong>
+                <a href="index.zh.html" lang="zh-Hans">简体中文</a>
+            </div>
+        </aside>
+        <main>
+            <h1>Help &amp; FAQ</h1>
+            <p class="lede">Quick answers to the questions we hear most often.</p>
+            <p class="meta">Last updated: 2026-07-02</p>
+
+            <h2>Permissions</h2>
+
+            <details class="faq">
+                <summary>Why does Melo ask for Screen Recording?</summary>
+                <p>Screen Recording is required to capture a region of your screen &mdash; both for screenshots with annotation and for OCR (reading text out of an image). macOS treats this as a sensitive capability, so you must approve Melo in <em>System Settings &rarr; Privacy &amp; Security &rarr; Screen Recording</em>. The first time you trigger a capture, macOS shows its own permission sheet and Melo does <strong>not</strong> open System Settings until you tap the system sheet's &ldquo;Open System Settings&rdquo; button.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Why does Melo ask for Accessibility?</summary>
+                <p>Only when you ask Melo to paste a clipboard item into another app. Apple requires this permission to be granted per-app in <em>System Settings &rarr; Privacy &amp; Security &rarr; Accessibility</em>. Without it, Melo will still copy items to your clipboard and you can paste them manually with <kbd>&#8984;</kbd>+<kbd>V</kbd>. See the <a href="accessibility.html">Auto-Paste guide</a> for setup steps.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Why does Melo ask for Microphone?</summary>
+                <p>Only the Transcribe feature records audio from your microphone to convert it into text. If you don't use Transcribe, you don't need to grant Microphone. You can revoke it at any time in <em>System Settings &rarr; Privacy &amp; Security &rarr; Microphone</em> and Melo will gracefully disable Transcribe.</p>
+            </details>
+
+            <h2>App behaviour</h2>
+
+            <details class="faq">
+                <summary>Where is my clipboard history stored?</summary>
+                <p>On your local Mac only, in a SQLite database under <code>~/Library/Application Support/Melo/</code>. It is never uploaded to a server. You can clear it from <em>Settings &rarr; Clipboard &rarr; Clear History</em>.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Can I use Melo without an internet connection?</summary>
+                <p>Yes. Every feature except StoreKit receipt verification works fully offline. The Storefront only needs connectivity when you start a subscription, restore purchases, or verify the trial window.</p>
+            </details>
+
+            <details class="faq">
+                <summary>The first capture attempt didn't work &mdash; what now?</summary>
+                <p>If you tapped &ldquo;Allow&rdquo; on Melo's in-app prompt but never tapped the system permission sheet's &ldquo;Open System Settings&rdquo; button, the system window closed without granting access. Trigger the capture again; this time Melo will take you straight to System Settings because it knows you've already seen the prompt once.</p>
+            </details>
+
+            <h2>Subscription</h2>
+
+            <details class="faq">
+                <summary>How does the free trial work?</summary>
+                <p>The first time you install Melo Suite from the App Store you get 14 days of full access. After the trial, single-feature subscriptions unlock individual tools (OCR, Clip, Capture, Color Picker) or the bundle subscription unlocks everything.</p>
+            </details>
+
+            <details class="faq">
+                <summary>How do I restore my purchase on a new Mac?</summary>
+                <p>Open <em>Settings &rarr; Storefront &rarr; Restore Purchases</em> and sign in with the Apple ID you used for the original purchase.</p>
+            </details>
+
+            <h2>Contact</h2>
+            <p>For anything not covered here, see the <a href="support.html">Support</a> page.</p>
+
+            <footer>
+                &copy; 2026 Melo. This page is hosted as a static site on GitHub Pages and is the source of truth for in-app help links.
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -4,118 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melo Privacy Policy</title>
+    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/privacy.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/privacy.zh.html">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #222; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 8px; }
-        h2 { margin-top: 32px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
-        h3 { margin-top: 20px; }
-        .updated { color: #666; font-size: 0.9em; }
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+        main h3 { font-size: 16px; margin: 24px 0 8px; }
+        main p, main li { font-size: 15px; }
+        main .updated { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
         ul { padding-left: 22px; }
         li { margin: 6px 0; }
-        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+        code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+        a { color: var(--accent); }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
     </style>
 </head>
 <body>
-    <h1>Melo Privacy Policy</h1>
-    <p class="updated">Last updated: 2026-06-24</p>
-    <p><a href="privacy.zh.html">简体中文</a></p>
+    <div class="layout">
+        <aside>
+            <h1>Melo Docs</h1>
+            <p class="subtitle">Help, support &amp; legal</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Help &amp; FAQ</a></li>
+                    <li><a href="accessibility.html">Auto-Paste Guide</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <strong>English</strong>
+                <a href="privacy.zh.html" lang="zh-Hans">简体中文</a>
+            </div>
+        </aside>
+        <main>
+            <h1>Melo Privacy Policy</h1>
+            <p class="updated">Last updated: 2026-06-24</p>
 
-    <h2>Introduction</h2>
-    <p>Melo is a personal project operated by an individual developer. This policy describes how the Melo suite of macOS applications collects, uses, and discloses information across all of the apps we publish on the Mac App Store.</p>
+            <h2>Introduction</h2>
+            <p>Melo is a personal project operated by an individual developer. This policy describes how the Melo suite of macOS applications collects, uses, and discloses information across all of the apps we publish on the Mac App Store.</p>
 
-    <h2>Apps Covered by This Policy</h2>
-    <p>This policy covers every Melo-branded app we distribute on the Mac App Store, whether installed separately or together:</p>
-    <ul>
-        <li><strong>Melo Suite</strong> &mdash; the flagship app that ships every Melo tool (screenshot, annotation, OCR, color picker, clipboard history, menu bar layout, voice transcription) in a single bundle.</li>
-        <li><strong>Melo Capture</strong> &mdash; the standalone screenshot and annotation app.</li>
-        <li><strong>Melo OCR</strong> &mdash; the standalone on-screen text recognition app.</li>
-        <li><strong>Melo Clip</strong> &mdash; the standalone clipboard history app.</li>
-        <li><strong>Melo Color Picker</strong> &mdash; the standalone screen color sampling app.</li>
-    </ul>
-    <p>Each app can be installed and used independently. The privacy practices below apply uniformly to every Melo-branded build &mdash; no per-app behavior diverges from what is described here.</p>
+            <h2>Apps Covered by This Policy</h2>
+            <p>This policy covers every Melo-branded app we distribute on the Mac App Store, whether installed separately or together:</p>
+            <ul>
+                <li><strong>Melo Suite</strong> &mdash; the flagship app that ships every Melo tool (screenshot, annotation, OCR, color picker, clipboard history, menu bar layout, voice transcription) in a single bundle.</li>
+                <li><strong>Melo Capture</strong> &mdash; the standalone screenshot and annotation app.</li>
+                <li><strong>Melo OCR</strong> &mdash; the standalone on-screen text recognition app.</li>
+                <li><strong>Melo Clip</strong> &mdash; the standalone clipboard history app.</li>
+                <li><strong>Melo Color Picker</strong> &mdash; the standalone screen color sampling app.</li>
+            </ul>
+            <p>Each app can be installed and used independently. The privacy practices below apply uniformly to every Melo-branded build &mdash; no per-app behavior diverges from what is described here.</p>
 
-    <h2>Information We Collect</h2>
+            <h2>Information We Collect</h2>
 
-    <h3>Data You Provide or That Is Generated on Your Device</h3>
-    <ul>
-        <li><strong>Clipboard history</strong> (Melo Suite, Melo Clip) &mdash; text, links, image references, and color values that you copy while Melo Clip is running. Stored locally on your device. Used only to power the in-app clipboard history list. Never transmitted off your device.</li>
-        <li><strong>Color history</strong> (Melo Suite, Melo Color Picker) &mdash; the most recent 20 color values you sampled. Stored locally. Never transmitted off your device.</li>
-        <li><strong>Custom language packs</strong> (Melo Suite, Melo OCR) &mdash; if you create or import a custom translation pack for OCR, the source/target language identifiers and downloaded pack data are stored locally.</li>
-        <li><strong>Screenshots and annotations</strong> (Melo Suite, Melo Capture) &mdash; any screenshot you take, the rectangular region you selected, and any strokes/text/callouts you draw in the annotation editor. Saved only to the destination folder you choose in the macOS save dialog. Never transmitted off your device.</li>
-        <li><strong>OCR results</strong> (Melo Suite, Melo OCR) &mdash; the text recognized from each captured region. Stored locally in the per-app capture history. Never transmitted off your device.</li>
-    </ul>
+            <h3>Data You Provide or That Is Generated on Your Device</h3>
+            <ul>
+                <li><strong>Clipboard history</strong> (Melo Suite, Melo Clip) &mdash; text, links, image references, and color values that you copy while Melo Clip is running. Stored locally on your device. Used only to power the in-app clipboard history list. Never transmitted off your device.</li>
+                <li><strong>Color history</strong> (Melo Suite, Melo Color Picker) &mdash; the most recent 20 color values you sampled. Stored locally. Never transmitted off your device.</li>
+                <li><strong>Custom language packs</strong> (Melo Suite, Melo OCR) &mdash; if you create or import a custom translation pack for OCR, the source/target language identifiers and downloaded pack data are stored locally.</li>
+                <li><strong>Screenshots and annotations</strong> (Melo Suite, Melo Capture) &mdash; any screenshot you take, the rectangular region you selected, and any strokes/text/callouts you draw in the annotation editor. Saved only to the destination folder you choose in the macOS save dialog. Never transmitted off your device.</li>
+                <li><strong>OCR results</strong> (Melo Suite, Melo OCR) &mdash; the text recognized from each captured region. Stored locally in the per-app capture history. Never transmitted off your device.</li>
+            </ul>
 
-    <h3>Automatically Collected Information</h3>
-    <p>None. The current App Store builds of every Melo app exclude third-party analytics, advertising SDKs, and crash reporting services. There is no telemetry, no usage analytics, and no remote logging of any kind.</p>
+            <h3>Automatically Collected Information</h3>
+            <p>None. The current App Store builds of every Melo app exclude third-party analytics, advertising SDKs, and crash reporting services. There is no telemetry, no usage analytics, and no remote logging of any kind.</p>
 
-    <h2>How We Use Your Information</h2>
-    <p>Melo uses the data stored on your device solely to:</p>
-    <ul>
-        <li>Provide and maintain the functionality of the app you are using (for example, surfacing your clipboard history, or rendering the color you picked).</li>
-        <li>Improve the user experience and fix bugs in the version of the app installed on your device.</li>
-        <li>Develop new features in future updates.</li>
-    </ul>
-    <p>We do not profile users, we do not build advertising profiles, and we do not sell or share any data with third parties for any purpose.</p>
+            <h2>How We Use Your Information</h2>
+            <p>Melo uses the data stored on your device solely to:</p>
+            <ul>
+                <li>Provide and maintain the functionality of the app you are using (for example, surfacing your clipboard history, or rendering the color you picked).</li>
+                <li>Improve the user experience and fix bugs in the version of the app installed on your device.</li>
+                <li>Develop new features in future updates.</li>
+            </ul>
+            <p>We do not profile users, we do not build advertising profiles, and we do not sell or share any data with third parties for any purpose.</p>
 
-    <h2>Data Storage and Retention</h2>
-    <p>All data described above is stored locally on your Mac, inside the standard macOS application support / container directory for the Melo app you are using. The developer does not have remote access to this data. You can delete it at any time by:</p>
-    <ul>
-        <li>Using the in-app &ldquo;Clear history&rdquo; controls (clipboard history, color history, capture history).</li>
-        <li>Deleting the screenshots you saved to your chosen folder via Finder.</li>
-        <li>Uninstalling the app, which removes its local container.</li>
-    </ul>
-    <p>Screenshots and OCR results remain in the save folder / history until you delete them yourself or uninstall the app. We do not retain any copy of your data on our servers.</p>
+            <h2>Data Storage and Retention</h2>
+            <p>All data described above is stored locally on your Mac, inside the standard macOS application support / container directory for the Melo app you are using. The developer does not have remote access to this data. You can delete it at any time by:</p>
+            <ul>
+                <li>Using the in-app &ldquo;Clear history&rdquo; controls (clipboard history, color history, capture history).</li>
+                <li>Deleting the screenshots you saved to your chosen folder via Finder.</li>
+                <li>Uninstalling the app, which removes its local container.</li>
+            </ul>
+            <p>Screenshots and OCR results remain in the save folder / history until you delete them yourself or uninstall the app. We do not retain any copy of your data on our servers.</p>
 
-    <h2>System Permissions Requested</h2>
-    <p>Melo apps request the following macOS system permissions only when needed for the feature the user is actively using. Every app in the Melo family follows the same rules: no permission is requested at launch, no permission is requested automatically, and the user always sees a plain-language explanation before macOS asks them to grant access.</p>
+            <h2>System Permissions Requested</h2>
+            <p>Melo apps request the following macOS system permissions only when needed for the feature the user is actively using. Every app in the Melo family follows the same rules: no permission is requested at launch, no permission is requested automatically, and the user always sees a plain-language explanation before macOS asks them to grant access.</p>
 
-    <h3>Screen Recording</h3>
-    <p><strong>What the permission is for.</strong> macOS exposes a Screen Recording entitlement so that an app can read the pixels on the screen. The Melo apps that ask for this permission do so for the following user-initiated features only:</p>
-    <ul>
-        <li><strong>Region screenshot capture</strong> (Melo Suite, Melo Capture) &mdash; after the user presses a global shortcut, drags a rectangle on the screen, and confirms, a single still image of that rectangle is produced. The image is then offered to the user as a save dialog or copied to the clipboard. No video, no audio, no continuous capture.</li>
-        <li><strong>On-screen text recognition (OCR)</strong> (Melo Suite, Melo OCR) &mdash; after the user presses a global shortcut, selects a rectangular region with the system screenshot picker, and confirms, the resulting still image is read with Apple's Vision framework. The recognized text is shown in the app, copied to the clipboard, and saved to the local OCR history. The image itself is not transmitted anywhere.</li>
-        <li><strong>Menu bar item thumbnails</strong> (Melo Suite only) &mdash; when the user explicitly enables the menu bar layout control feature, Melo captures a single static thumbnail of each macOS menu bar item the user has chosen to fold. Thumbnails are regenerated each session, rendered in-process, and never transmitted anywhere.</li>
-    </ul>
-    <p><strong>What data is collected via Screen Recording.</strong> For region capture and OCR: a single still PNG of the user-selected rectangular area, taken at the moment the user releases the mouse. For menu bar folding: one small static thumbnail per menu bar item, taken at the moment the user opens the menu bar layout control.</p>
-    <p><strong>Purposes.</strong> The still image is used solely to (a) save a screenshot the user explicitly asked for, (b) extract text the user explicitly asked to recognize, or (c) render a fold view the user explicitly enabled. The still image is not used to train any model, not sent to any server, and not shared with any third party.</p>
-    <p><strong>Sharing.</strong> Screen-recording-derived data is never shared with third parties. There is no telemetry upload, no analytics SDK, and no server-side processing of the captured pixels.</p>
-    <p><strong>Storage.</strong> The still image lives only on your device: in the folder you choose in the macOS save dialog, in the local OCR / capture history, or in the temporary file that is overwritten and deleted as soon as OCR finishes. We do not store it on any server.</p>
-    <p><strong>Retention.</strong> The still image is retained on your device until you delete it (by deleting the file, clearing the history, or uninstalling the app). We do not retain any copy of it on our servers &mdash; we do not operate any servers that receive it.</p>
-    <p><strong>Policy excerpt that covers this data.</strong> The remainder of this page describes, in the same terms used above, the limited on-device use, the absence of any sharing, and the user controls available. The relevant language above is the Screen Recording bullet under &ldquo;Permissions Requested&rdquo; together with the &ldquo;Data Storage&rdquo; and &ldquo;Data Sharing&rdquo; sections.</p>
+            <h3>Screen Recording</h3>
+            <p><strong>What the permission is for.</strong> macOS exposes a Screen Recording entitlement so that an app can read the pixels on the screen. The Melo apps that ask for this permission do so for the following user-initiated features only:</p>
+            <ul>
+                <li><strong>Region screenshot capture</strong> (Melo Suite, Melo Capture) &mdash; after the user presses a global shortcut, drags a rectangle on the screen, and confirms, a single still image of that rectangle is produced. The image is then offered to the user as a save dialog or copied to the clipboard. No video, no audio, no continuous capture.</li>
+                <li><strong>On-screen text recognition (OCR)</strong> (Melo Suite, Melo OCR) &mdash; after the user presses a global shortcut, selects a rectangular region with the system screenshot picker, and confirms, the resulting still image is read with Apple's Vision framework. The recognized text is shown in the app, copied to the clipboard, and saved to the local OCR history. The image itself is not transmitted anywhere.</li>
+                <li><strong>Menu bar item thumbnails</strong> (Melo Suite only) &mdash; when the user explicitly enables the menu bar layout control feature, Melo captures a single static thumbnail of each macOS menu bar item the user has chosen to fold. Thumbnails are regenerated each session, rendered in-process, and never transmitted anywhere.</li>
+            </ul>
+            <p><strong>What data is collected via Screen Recording.</strong> For region capture and OCR: a single still PNG of the user-selected rectangular area, taken at the moment the user releases the mouse. For menu bar folding: one small static thumbnail per menu bar item, taken at the moment the user opens the menu bar layout control.</p>
+            <p><strong>Purposes.</strong> The still image is used solely to (a) save a screenshot the user explicitly asked for, (b) extract text the user explicitly asked to recognize, or (c) render a fold view the user explicitly enabled. The still image is not used to train any model, not sent to any server, and not shared with any third party.</p>
+            <p><strong>Sharing.</strong> Screen-recording-derived data is never shared with third parties. There is no telemetry upload, no analytics SDK, and no server-side processing of the captured pixels.</p>
+            <p><strong>Storage.</strong> The still image lives only on your device: in the folder you choose in the macOS save dialog, in the local OCR / capture history, or in the temporary file that is overwritten and deleted as soon as OCR finishes. We do not store it on any server.</p>
+            <p><strong>Retention.</strong> The still image is retained on your device until you delete it (by deleting the file, clearing the history, or uninstalling the app). We do not retain any copy of it on our servers &mdash; we do not operate any servers that receive it.</p>
+            <p><strong>Policy excerpt that covers this data.</strong> The remainder of this page describes, in the same terms used above, the limited on-device use, the absence of any sharing, and the user controls available. The relevant language above is the Screen Recording bullet under &ldquo;Permissions Requested&rdquo; together with the &ldquo;Data Storage&rdquo; and &ldquo;Data Sharing&rdquo; sections.</p>
 
-    <h3>Accessibility</h3>
-    <p>Used by Melo Suite and Melo Clip only when you choose a clipboard history item and ask Melo to paste it into the app you are currently using. Melo uses this permission solely to complete that single paste action. It does not monitor other apps, does not collect accessibility data, and the request is triggered only by an explicit user gesture.</p>
+            <h3>Accessibility</h3>
+            <p>Used by Melo Suite and Melo Clip only when you choose a clipboard history item and ask Melo to paste it into the app you are currently using. Melo uses this permission solely to complete that single paste action. It does not monitor other apps, it does not collect accessibility data, and the request is triggered only by an explicit user gesture.</p>
 
-    <h3>Microphone</h3>
-    <p>Used by Melo Suite for the voice-to-text transcription feature. Audio is captured locally for the duration of the recording you start, transcribed on-device with Apple's Speech framework, and never transmitted off your device.</p>
+            <h3>Microphone</h3>
+            <p>Used by Melo Suite for the voice-to-text transcription feature. Audio is captured locally for the duration of the recording you start, transcribed on-device with Apple's Speech framework, and never transmitted off your device.</p>
 
-    <h3>Speech Recognition</h3>
-    <p>Used by Melo Suite for the voice-to-text transcription feature. Audio is processed by Apple's on-device Speech framework. We do not have access to the audio or the transcripts beyond what is stored in the local capture history.</p>
+            <h3>Speech Recognition</h3>
+            <p>Used by Melo Suite for the voice-to-text transcription feature. Audio is processed by Apple's on-device Speech framework. We do not have access to the audio or the transcripts beyond what is stored in the local capture history.</p>
 
-    <h3>Notifications</h3>
-    <p>Used by Melo Suite to surface the completion of long-running tasks such as transcription or capture. We do not send push notifications from a server.</p>
+            <h3>Notifications</h3>
+            <p>Used by Melo Suite to surface the completion of long-running tasks such as transcription or capture. We do not send push notifications from a server.</p>
 
-    <h2>Data Sharing</h2>
-    <p>We do not sell, trade, or otherwise transfer your personal data to outside parties. The current build of every Melo app does not upload local records, screen-capture pixels, OCR results, or any other data to a server that we operate.</p>
-    <p>Apple may process data on your behalf under their own privacy policy when you use system frameworks (Speech framework, App Store distribution, sandboxed file access). Those processes are governed by Apple's privacy policy, not ours.</p>
+            <h2>Data Sharing</h2>
+            <p>We do not sell, trade, or otherwise transfer your personal data to outside parties. The current build of every Melo app does not upload local records, screen-capture pixels, OCR results, or any other data to a server that we operate.</p>
+            <p>Apple may process data on your behalf under their own privacy policy when you use system frameworks (Speech framework, App Store distribution, sandboxed file access). Those processes are governed by Apple's privacy policy, not ours.</p>
 
-    <h2>Your Rights</h2>
-    <ul>
-        <li>Access your personal data, which is stored only on your device.</li>
-        <li>Delete your local data at any time via the in-app controls or by uninstalling the app.</li>
-        <li>Revoke any of the permissions above at any time via System Settings &rarr; Privacy &amp; Security.</li>
-    </ul>
-    <p>Because we do not collect your data on our servers, there is no server-side record to access, export, or delete. All of the above actions are local to your Mac.</p>
+            <h2>Your Rights</h2>
+            <ul>
+                <li>Access your personal data, which is stored only on your device.</li>
+                <li>Delete your local data at any time via the in-app controls or by uninstalling the app.</li>
+                <li>Revoke any of the permissions above at any time via System Settings &rarr; Privacy &amp; Security.</li>
+            </ul>
+            <p>Because we do not collect your data on our servers, there is no server-side record to access, export, or delete. All of the above actions are local to your Mac.</p>
 
-    <h2>Children Under 13</h2>
-    <p>The Melo apps are not intended for children under 13, and personal information from this age group is not knowingly collected.</p>
+            <h2>Children Under 13</h2>
+            <p>The Melo apps are not intended for children under 13, and personal information from this age group is not knowingly collected.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>Updates will be posted on this page with a revised &ldquo;Last updated&rdquo; date. Material changes that affect the screen-recording or other system-permission handling described above will be called out at the top of the page.</p>
+            <h2>Changes to This Policy</h2>
+            <p>Updates will be posted on this page with a revised &ldquo;Last updated&rdquo; date. Material changes that affect the screen-recording or other system-permission handling described above will be called out at the top of the page.</p>
 
-    <h2>Contact</h2>
-    <ul>
-        <li>Email: lvjianhua75@me.com</li>
-    </ul>
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: lvjianhua75@me.com</li>
+            </ul>
+
+            <footer>
+                &copy; 2026 Melo. This page is hosted as a static site on GitHub Pages and is the source of truth for in-app help links.
+            </footer>
+        </main>
+    </div>
 </body>
 </html>

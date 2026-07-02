@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动粘贴（辅助功能）说明 - Melo</title>
+    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/accessibility.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/accessibility.zh.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        main h3 { font-size: 16px; margin: 24px 0 8px; }
+        main p, main li { font-size: 15px; }
+        main .lede { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+        main .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        .note {
+            background: rgba(0,122,255,0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 16px 0;
+        }
+        .step {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 10px 0;
+        }
+        .step strong { display: block; margin-bottom: 4px; }
+        code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+        kbd { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.9em; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <h1>Melo 文档</h1>
+            <p class="subtitle">帮助 · 技术支持 · 法律</p>
+            <nav>
+                <ul>
+                    <li><a href="index.zh.html">帮助与 FAQ</a></li>
+                    <li><a href="accessibility.zh.html" class="active">自动粘贴说明</a></li>
+                    <li><a href="support.zh.html">技术支持</a></li>
+                    <li><a href="privacy.zh.html">隐私政策</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="accessibility.html" lang="en">English</a>
+                <strong>简体中文</strong>
+            </div>
+        </aside>
+        <main>
+            <h1>自动粘贴（辅助功能）说明</h1>
+            <p class="lede">如何让 Melo 的剪贴板历史一键自动粘贴到其他 app。</p>
+            <p class="meta">最后更新：2026-07-02</p>
+
+            <h2>什么是自动粘贴？</h2>
+            <p>默认情况下，在 Melo 剪贴板历史里点击某一项，内容会复制到剪贴板，并弹一个简短的提示告诉你按 <kbd>&#8984;</kbd>+<kbd>V</kbd> 粘贴。这种方式在任何 Mac 上都直接可用，不需要任何额外权限。</p>
+            <p>如果你希望 Melo <strong>直接替你粘贴</strong>（不用再按 <kbd>&#8984;</kbd>+<kbd>V</kbd>），就需要授予 Melo <strong>辅助功能</strong>权限。由于 Mac App Store 要求应用保持沙盒友好，<strong>App Store 版本不会自动向 macOS 注册辅助功能</strong>。你需要按照下面的步骤手动把 Melo 添加到辅助功能列表中。</p>
+
+            <h2>为什么 Apple 要求这样？</h2>
+            <p>辅助功能是 macOS 唯一允许一个 app 向另一个 app 发送按键的权限。Apple 把这视为敏感能力，必须在 <em>系统设置 &rarr; 隐私与安全性 &rarr; 辅助功能</em> 里逐个 app 授权。</p>
+
+            <h2>手动为 Melo 开启辅助功能</h2>
+
+            <div class="note">
+                <strong>重要：</strong>App Store 版本的 Melo 无法替你打开辅助功能设置页面。请严格按照以下步骤手动操作。
+            </div>
+
+            <div class="step"><strong>1. 打开系统设置</strong>点击菜单栏的 Apple 菜单（<strong>&#63743;</strong>），选择 <strong>系统设置</strong>。</div>
+            <div class="step"><strong>2. 进入隐私与安全性 &rarr; 辅助功能</strong>在左侧边栏找到并点击 <strong>隐私与安全性</strong>，然后在右侧选择 <strong>辅助功能</strong>。</div>
+            <div class="step"><strong>3. 解锁设置面板</strong>点击左下角的锁图标，输入 Mac 密码或使用触控 ID 解锁。</div>
+            <div class="step"><strong>4. 将 Melo 添加到列表</strong>点击应用列表下方的 <strong>+</strong> 按钮。在文件选择器中打开 <strong>应用程序</strong> 文件夹，选中你正在使用的 Melo 应用（例如 <strong>Melo Suite</strong> 或 <strong>Melo Clip</strong>），然后点击 <strong>打开</strong>。</div>
+            <div class="step"><strong>5. 打开开关</strong>回到辅助功能列表，确保 <strong>Melo Suite</strong> 右侧的开关处于<strong>打开</strong>状态。</div>
+            <div class="step"><strong>6. 重新启动 Melo</strong>完全退出 Melo（按 <kbd>&#8984;</kbd>+<kbd>Q</kbd>），然后重新打开。macOS 每次启动 app 都会重新检查辅助功能授权。</div>
+            <div class="step"><strong>7. 尝试自动粘贴</strong>打开剪贴板面板，点击任意一条历史记录，Melo 会自动把它粘贴到当前聚焦的 app 中。</div>
+
+            <h2>常见问题</h2>
+
+            <h3>已经添加了 Melo，但自动粘贴仍然无效</h3>
+            <p>请确认 <em>系统设置 &rarr; 隐私与安全性 &rarr; 辅助功能</em> 中 Melo 右侧的开关确实已经打开，然后退出并重新启动 Melo。</p>
+
+            <h3>辅助功能列表里出现了多个 Melo 条目</h3>
+            <p>如果你同时安装了 Melo Suite 和某个单功能 app（例如 Melo Clip），就可能出现这种情况。保留你正在使用的那个 Melo 应用开启即可，也可以把常用的都开启。建议删除旧的重复条目，避免混淆。</p>
+
+            <h3>应用程序文件夹里找不到 Melo</h3>
+            <p>如果你安装后把 app 移动到了其他位置，请在辅助功能设置中点击 <strong>+</strong> 按钮，浏览到 Melo 实际所在的位置并选中它。只有正在运行的 app 路径与列表中启用的路径一致时，自动粘贴才能正常工作。</p>
+
+            <h3>可以不开启辅助功能使用 Melo 吗？</h3>
+            <p>可以。除了自动粘贴之外，其他功能都不需要这个权限。点击剪贴板历史项时，Melo 仍会把内容复制到剪贴板并弹出提示，你可以手动按 <kbd>&#8984;</kbd>+<kbd>V</kbd> 粘贴。</p>
+
+            <h2>隐私</h2>
+            <p>Melo 使用辅助功能权限<strong>仅</strong>用于向你当前聚焦的 app 发送粘贴快捷键。我们不会监听其他 app、读取你没有要求粘贴的内容、或收集任何辅助功能数据。完整的数据处理说明见 <a href="privacy.zh.html">隐私政策</a>。</p>
+
+            <footer>
+                &copy; 2026 Melo. 本页面托管在 GitHub Pages 静态站点上，是 app 内帮助链接的单一可信来源。
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

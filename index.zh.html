@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助与 FAQ - Melo</title>
+    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/index.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/index.zh.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        main h3 { font-size: 16px; margin: 24px 0 8px; }
+        main p, main li { font-size: 15px; }
+        main .lede { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+        main .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        details.faq { margin-bottom: 14px; }
+        details.faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 4px 0;
+            color: var(--fg);
+        }
+        details.faq summary:hover { color: var(--accent); }
+        details.faq[open] summary { color: var(--accent); }
+        details.faq p { margin: 6px 0 0; color: var(--muted); }
+        code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+        kbd { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.9em; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <h1>Melo 文档</h1>
+            <p class="subtitle">帮助 · 技术支持 · 法律</p>
+            <nav>
+                <ul>
+                    <li><a href="index.zh.html" class="active">帮助与 FAQ</a></li>
+                    <li><a href="accessibility.zh.html">自动粘贴说明</a></li>
+                    <li><a href="support.zh.html">技术支持</a></li>
+                    <li><a href="privacy.zh.html">隐私政策</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="index.html" lang="en">English</a>
+                <strong>简体中文</strong>
+            </div>
+        </aside>
+        <main>
+            <h1>帮助与 FAQ</h1>
+            <p class="lede">我们最常收到的问题的快速回答。</p>
+            <p class="meta">最后更新：2026-07-02</p>
+
+            <h2>权限</h2>
+
+            <details class="faq">
+                <summary>为什么 Melo 要请求屏幕录制？</summary>
+                <p>屏幕录制是捕获你屏幕上某一块区域的必要权限——截图标注和 OCR（从图片里读文字）都需要。macOS 把这视为敏感能力，你必须在 <em>系统设置 &rarr; 隐私与安全性 &rarr; 屏幕录制</em> 里批准 Melo。第一次触发截图时，macOS 会自己弹出授权 sheet，Melo 在你点击系统的&ldquo;打开系统设置&rdquo;按钮<strong>之前</strong>不会替你跳设置。</p>
+            </details>
+
+            <details class="faq">
+                <summary>为什么 Melo 要请求辅助功能？</summary>
+                <p>只有在你让 Melo 把剪贴板内容粘贴到其他 app 时才需要。Apple 要求这个权限必须在 <em>系统设置 &rarr; 隐私与安全性 &rarr; 辅助功能</em> 里逐个 app 授权。没有授权时，Melo 仍然会把内容复制到剪贴板，你只需要手动按 <kbd>&#8984;</kbd>+<kbd>V</kbd> 即可。具体开启步骤见 <a href="accessibility.zh.html">自动粘贴说明</a>。</p>
+            </details>
+
+            <details class="faq">
+                <summary>为什么 Melo 要请求麦克风？</summary>
+                <p>只有&ldquo;语音转文字&rdquo;功能需要录制麦克风音频。如果你不用这个功能，可以不给麦克风权限，随时在 <em>系统设置 &rarr; 隐私与安全性 &rarr; 麦克风</em> 撤销，Melo 会自动关闭语音转文字。</p>
+            </details>
+
+            <h2>app 行为</h2>
+
+            <details class="faq">
+                <summary>我的剪贴板历史存在哪里？</summary>
+                <p>只存在你这台 Mac 本地，在 <code>~/Library/Application Support/Melo/</code> 下的一个 SQLite 数据库里，不会上传到任何服务器。你可以随时在 <em>设置 &rarr; 剪贴板 &rarr; 清除历史</em> 里清空。</p>
+            </details>
+
+            <details class="faq">
+                <summary>断网时能用 Melo 吗？</summary>
+                <p>可以。除 StoreKit 收据校验外，所有功能都完全离线可用。订阅商店仅在开通订阅、恢复购买或校验试用窗口时才需要联网。</p>
+            </details>
+
+            <details class="faq">
+                <summary>第一次截图没成功，怎么办？</summary>
+                <p>如果你在 Melo 的提示框点了&ldquo;允许&rdquo;，但没点 macOS 系统 sheet 上的&ldquo;打开系统设置&rdquo;按钮，系统 sheet 会关掉，但没有真正授权。再次触发截图，这次 Melo 已经记录&ldquo;你看过一次系统 sheet&rdquo;，会直接带你进系统设置。</p>
+            </details>
+
+            <h2>订阅</h2>
+
+            <details class="faq">
+                <summary>免费试用怎么算？</summary>
+                <p>从 App Store 首次安装 Melo Suite 起，你有 14 天完整试用。试用结束后，可以选择单功能订阅（OCR / Clip / Capture / Color Picker），也可以订阅 Melo Suite 全家桶。</p>
+            </details>
+
+            <details class="faq">
+                <summary>新 Mac 上怎么恢复购买？</summary>
+                <p>打开 <em>设置 &rarr; 订阅商店 &rarr; 恢复购买</em>，用当初购买时使用的 Apple ID 登录即可。</p>
+            </details>
+
+            <h2>联系我们</h2>
+            <p>如果上面没有覆盖到你的问题，请通过 <a href="support.zh.html">技术支持</a> 页面联系。</p>
+
+            <footer>
+                &copy; 2026 Melo. 本页面托管在 GitHub Pages 静态站点上，是 app 内帮助链接的单一可信来源。
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

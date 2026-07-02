@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Paste (Accessibility) Guide - Melo</title>
+    <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/accessibility.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/accessibility.zh.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        main h3 { font-size: 16px; margin: 24px 0 8px; }
+        main p, main li { font-size: 15px; }
+        main .lede { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+        main .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        .note {
+            background: rgba(0,122,255,0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin: 16px 0;
+        }
+        .step {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 10px 0;
+        }
+        .step strong { display: block; margin-bottom: 4px; }
+        code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+        kbd { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.9em; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <h1>Melo Docs</h1>
+            <p class="subtitle">Help, support &amp; legal</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Help &amp; FAQ</a></li>
+                    <li><a href="accessibility.html" class="active">Auto-Paste Guide</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <strong>English</strong>
+                <a href="accessibility.zh.html" lang="zh-Hans">简体中文</a>
+            </div>
+        </aside>
+        <main>
+            <h1>Auto-Paste (Accessibility) Guide</h1>
+            <p class="lede">How to enable one-tap automatic paste from Melo's Clipboard history into another app.</p>
+            <p class="meta">Last updated: 2026-07-02</p>
+
+            <h2>What is Auto-Paste?</h2>
+            <p>By default, when you tap a clipboard history item in Melo, the content is copied to your clipboard and a brief toast tells you to press <kbd>&#8984;</kbd>+<kbd>V</kbd> to paste it into the focused app. This works on every Mac without any extra permission.</p>
+            <p>If you want Melo to <strong>paste for you</strong> &mdash; no <kbd>&#8984;</kbd>+<kbd>V</kbd> required &mdash; Melo needs the <strong>Accessibility</strong> permission. Because the Mac App Store requires us to keep the app sandbox-friendly, <strong>the App Store build does not register itself with macOS Accessibility automatically</strong>. You need to add Melo to the Accessibility list manually, following the steps below.</p>
+
+            <h2>Why does Apple require this?</h2>
+            <p>Accessibility is the only macOS permission that lets one app send keystrokes to another. Apple treats it as a sensitive capability so the user must approve it on a per-app basis in <em>System Settings &rarr; Privacy &amp; Security &rarr; Accessibility</em>.</p>
+
+            <h2>Enable Accessibility for Melo manually</h2>
+
+            <div class="note">
+                <strong>Important:</strong> The App Store version of Melo cannot open the Accessibility settings for you. Please follow every step below manually.
+            </div>
+
+            <div class="step"><strong>1. Open System Settings</strong>Click the Apple menu (<strong>&#63743;</strong>) in the menu bar and choose <strong>System Settings</strong>.</div>
+            <div class="step"><strong>2. Go to Privacy &amp; Security &rarr; Accessibility</strong>In the left sidebar, scroll down and select <strong>Privacy &amp; Security</strong>, then click <strong>Accessibility</strong> on the right.</div>
+            <div class="step"><strong>3. Unlock the pane</strong>Click the lock icon in the bottom-left corner and enter your Mac password or use Touch ID.</div>
+            <div class="step"><strong>4. Add Melo to the list</strong>Click the <strong>+</strong> button below the app list. In the file picker, open your <strong>Applications</strong> folder, select <strong>Melo Suite</strong> (or the standalone Melo app you are using, such as <strong>Melo Clip</strong>), and click <strong>Open</strong>.</div>
+            <div class="step"><strong>5. Turn on the switch</strong>Back in the Accessibility list, make sure the switch next to <strong>Melo Suite</strong> is turned <strong>on</strong>.</div>
+            <div class="step"><strong>6. Restart Melo</strong>Fully quit Melo (<kbd>&#8984;</kbd>+<kbd>Q</kbd>) and open it again. macOS re-checks the Accessibility permission on every launch.</div>
+            <div class="step"><strong>7. Try Auto-Paste</strong>Open the Clip panel, click any clipboard history item, and Melo will paste it into the currently focused app automatically.</div>
+
+            <h2>Troubleshooting</h2>
+
+            <h3>I added Melo but Auto-Paste still doesn't work</h3>
+            <p>Make sure the switch next to Melo in <em>System Settings &rarr; Privacy &amp; Security &rarr; Accessibility</em> is really on. Then quit and re-launch Melo.</p>
+
+            <h3>I see more than one Melo entry in the Accessibility list</h3>
+            <p>This can happen if you have both Melo Suite and a single-feature app (for example, Melo Clip) installed. Keep only the app you are actively using enabled, or enable all Melo entries you use. Remove old duplicates to avoid confusion.</p>
+
+            <h3>Melo isn't in the Applications folder</h3>
+            <p>If you moved the app after installing it, use the <strong>+</strong> button in Accessibility to browse to wherever Melo is located. Auto-Paste will only work reliably when the enabled path matches the running app.</p>
+
+            <h3>Can I use Melo without Accessibility?</h3>
+            <p>Yes. Everything except Auto-Paste works without this permission. When you tap a clipboard history item, Melo still copies it to your clipboard and shows a toast; you can paste manually with <kbd>&#8984;</kbd>+<kbd>V</kbd>.</p>
+
+            <h2>Privacy</h2>
+            <p>Melo uses Accessibility <strong>only</strong> to send the keystroke sequence that pastes your selected clipboard item into the app that is currently focused. Melo does not monitor other apps, does not read text you did not ask it to paste, and does not collect any accessibility data. See the <a href="privacy.html">Privacy Policy</a> for the full data-handling details.</p>
+
+            <footer>
+                &copy; 2026 Melo. This page is hosted as a static site on GitHub Pages and is the source of truth for in-app help links.
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -3,76 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术支持 - Melo Suite</title>
+    <title>技术支持 - Melo</title>
     <link rel="alternate" hreflang="en" href="https://lennorlv.github.io/melo-legal/support.html">
     <link rel="alternate" hreflang="zh-Hans" href="https://lennorlv.github.io/melo-legal/support.zh.html">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --bg: #ffffff;
+            --fg: #1d1d1f;
+            --muted: #6e6e73;
+            --accent: #007aff;
+            --card: #f5f5f7;
+            --border: #d2d2d7;
         }
-        h1 { font-size: 24px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h2 { font-size: 18px; margin-top: 30px; }
-        ul { padding-left: 20px; }
-        li { margin: 8px 0; }
-        .date { color: #666; font-size: 14px; }
-        .language-switch {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-bottom: 20px;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1c1c1e;
+                --fg: #f5f5f7;
+                --muted: #98989d;
+                --card: #2c2c2e;
+                --border: #3a3a3c;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        @media (max-width: 720px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+        aside {
+            padding: 28px 22px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+        }
+        aside h1 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+        aside .subtitle { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { margin-bottom: 6px; }
+        nav a {
+            display: block;
+            padding: 6px 10px;
+            margin: 0 -10px;
+            border-radius: 6px;
+            color: var(--fg);
+            text-decoration: none;
             font-size: 14px;
         }
-        .language-switch strong { color: #111; }
-        a { color: #007aff; }
-        hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+        nav a:hover { background: rgba(0,0,0,0.04); }
+        @media (prefers-color-scheme: dark) {
+            nav a:hover { background: rgba(255,255,255,0.06); }
+        }
+        nav a.active { color: var(--accent); background: rgba(0,122,255,0.10); font-weight: 500; }
+        .lang {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
+        .lang a:hover { color: var(--accent); }
+        .lang strong { color: var(--fg); margin-right: 10px; }
+        main { padding: 56px 64px; max-width: 880px; }
+        main h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.02em; }
+        main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        main p, main li { font-size: 15px; }
+        main .lede { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+        main .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        ul { padding-left: 22px; }
+        li { margin: 6px 0; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
     </style>
 </head>
 <body>
-    <nav class="language-switch" aria-label="Language">
-        <a href="support.html" lang="en">English</a>
-        <strong>简体中文</strong>
-    </nav>
+    <div class="layout">
+        <aside>
+            <h1>Melo 文档</h1>
+            <p class="subtitle">帮助 · 技术支持 · 法律</p>
+            <nav>
+                <ul>
+                    <li><a href="index.zh.html">帮助与 FAQ</a></li>
+                    <li><a href="accessibility.zh.html">自动粘贴说明</a></li>
+                    <li><a href="support.zh.html" class="active">技术支持</a></li>
+                    <li><a href="privacy.zh.html">隐私政策</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="support.html" lang="en">English</a>
+                <strong>简体中文</strong>
+            </div>
+        </aside>
+        <main>
+            <h1>技术支持</h1>
+            <p class="lede">如需帮助、反馈问题或提出功能建议，请联系我们。</p>
+            <p class="meta">最后更新：2026-07-02</p>
 
-    <h1>Melo Suite 技术支持</h1>
-    <p class="date">最后更新：2026-06-02</p>
+            <h2>联系方式</h2>
+            <p>如果你在使用 Melo 时需要帮助、希望反馈问题，或想提出功能建议，请通过以下邮箱联系我：</p>
+            <ul>
+                <li>邮箱：<a href="mailto:lvjianhua75@me.com">lvjianhua75@me.com</a></li>
+            </ul>
+            <p>反馈时建议附上 macOS 版本、Melo 版本号，以及问题的简要描述。若截图或录屏不包含隐私信息，也可以一并提供，方便定位问题。</p>
 
-    <h2>联系方式</h2>
-    <p>如果你在使用 Melo Suite 时需要帮助、希望反馈问题，或想提出功能建议，请通过以下邮箱联系我：</p>
-    <ul>
-        <li>邮箱：<a href="mailto:lvjianhua75@me.com">lvjianhua75@me.com</a></li>
-    </ul>
-    <p>反馈时建议附上 macOS 版本、Melo Suite 版本号，以及问题的简要描述。若截图或录屏不包含隐私信息，也可以一并提供，方便定位问题。</p>
+            <h2>响应时间</h2>
+            <p>Melo 由独立开发者维护。我通常会在 3 个工作日内回复，具体时间取决于问题复杂度和当前可用时间。</p>
 
-    <h2>响应时间</h2>
-    <p>Melo Suite 由独立开发者维护。我通常会在 3 个工作日内回复，具体时间取决于问题复杂度和当前可用时间。</p>
+            <h2>支持范围</h2>
+            <ul>
+                <li>App 名称：Melo Suite</li>
+                <li>平台：macOS</li>
+                <li>分发渠道：Apple App Store</li>
+            </ul>
 
-    <h2>支持范围</h2>
-    <ul>
-        <li>App 名称：Melo Suite</li>
-        <li>平台：macOS</li>
-        <li>分发渠道：Apple App Store</li>
-    </ul>
+            <h2>常见排查</h2>
+            <ul>
+                <li><strong>权限问题</strong>：如果截图、OCR、剪贴板粘贴、麦克风或语音识别功能不可用，请先在 macOS 系统设置的&ldquo;隐私与安全性&rdquo;中检查相关权限。</li>
+                <li><strong>权限变更后重启</strong>：修改权限后，请完全退出 Melo，然后重新打开。</li>
+                <li><strong>订阅或购买问题</strong>：请确认当前登录的是购买时使用的 Apple ID。你也可以在 App 内尝试恢复购买，若 App 提供该入口。</li>
+                <li><strong>剪贴板历史</strong>：剪贴板数据保存在本机。清空历史或卸载 App 可能会删除本地记录。</li>
+            </ul>
 
-    <h2>常见排查</h2>
-    <ul>
-        <li><strong>权限问题</strong>：如果截图、OCR、剪贴板粘贴、麦克风或语音识别功能不可用，请先在 macOS 系统设置的“隐私与安全性”中检查相关权限。</li>
-        <li><strong>权限变更后重启</strong>：修改权限后，请完全退出 Melo Suite，然后重新打开。</li>
-        <li><strong>订阅或购买问题</strong>：请确认当前登录的是购买时使用的 Apple ID。你也可以在 App 内尝试恢复购买，若 App 提供该入口。</li>
-        <li><strong>剪贴板历史</strong>：剪贴板数据保存在本机。清空历史或卸载 App 可能会删除本地记录。</li>
-    </ul>
-
-    <h2>隐私政策与使用条款</h2>
-    <ul>
-        <li><a href="privacy.zh.html">隐私政策</a></li>
-        <li><a href="terms.zh.html">使用条款</a></li>
-    </ul>
-
-    <hr>
-    <p>App Store 审核或技术支持相关问题，也可以通过上方邮箱联系。</p>
+            <footer>
+                &copy; 2026 Melo. 本页面托管在 GitHub Pages 静态站点上，是 app 内帮助链接的单一可信来源。
+            </footer>
+        </main>
+    </div>
 </body>
 </html>
