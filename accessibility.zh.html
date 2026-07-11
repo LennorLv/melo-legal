@@ -36,6 +36,7 @@
         @media (max-width: 720px) {
             .layout { grid-template-columns: 1fr; }
             aside { border-right: none; border-bottom: 1px solid var(--border); }
+            main { padding: 32px 20px; }
         }
         aside {
             padding: 28px 22px;
@@ -69,7 +70,8 @@
         .lang a { color: var(--muted); margin-right: 10px; text-decoration: none; }
         .lang a:hover { color: var(--accent); }
         .lang strong { color: var(--fg); margin-right: 10px; }
-        main { padding: 56px 64px; max-width: 880px; }
+        main { padding: 56px 64px; max-width: 1180px; width: 100%; }
+        main > h1, main > h2, main > h3, main > p, main > .note, main > footer { max-width: 780px; }
         main h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.02em; }
         main h2 { font-size: 21px; margin: 36px 0 12px; letter-spacing: -0.01em; }
         main h3 { font-size: 16px; margin: 24px 0 8px; }
@@ -87,11 +89,29 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 12px 16px;
-            margin: 10px 0;
+            padding: 18px;
+            margin: 14px 0 26px;
         }
         .step > strong { display: block; margin-bottom: 4px; }
         .step p { margin: 4px 0 0; }
+        .step figure { margin: 16px 0 0; }
+        .step-image-link { display: block; border-radius: 6px; cursor: zoom-in; }
+        .step-image-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+        .step img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            background: #f5f5f7;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        .step figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+        @media (max-width: 720px) {
+            .step { padding: 12px; margin-bottom: 20px; }
+            .step figure { margin-top: 12px; }
+        }
         code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
         kbd { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 0.9em; }
         footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
@@ -118,7 +138,7 @@
         <main>
             <h1>自动粘贴（辅助功能）说明</h1>
             <p class="lede">如何让 Melo 的剪贴板历史一键自动粘贴到其他 app。</p>
-            <p class="meta">最后更新：2026-07-02</p>
+            <p class="meta">最后更新：2026-07-11</p>
 
             <h2>什么是自动粘贴？</h2>
             <p>默认情况下，在 Melo 剪贴板历史里点击某一项，内容会复制到剪贴板，并弹一个简短的提示告诉你按 <kbd>&#8984;</kbd>+<kbd>V</kbd> 粘贴。这种方式在任何 Mac 上都直接可用，不需要任何额外权限。</p>
@@ -130,35 +150,61 @@
             <h2>手动为 Melo 开启辅助功能</h2>
 
             <div class="note">
-                <strong>重要：</strong>App Store 版本的 Melo 无法替你打开辅助功能设置页面。请严格按照以下步骤手动操作。
+                <strong>开始前：</strong>如果你是从 Melo 的<strong>“打开辅助功能并查看启用教程”</strong>进入本页，Melo 可能已经为你打开了系统设置，并定位到“辅助功能”。如果该页面已经显示，请保持窗口打开，直接从第 3 步继续。Melo 不会自动出现在列表中；找不到时，请按下面的步骤使用 <strong>+</strong> 手动添加。
             </div>
 
             <div class="step">
                 <strong>1. 打开系统设置</strong>
-                <p>点击菜单栏的 Apple 菜单（<strong>&#63743;</strong>），选择 <strong>系统设置</strong>。</p>
+                <p>如果系统设置尚未打开，请点击菜单栏的 Apple 菜单（<strong>&#63743;</strong>），选择<strong>系统设置</strong>。</p>
+                <figure>
+                    <a class="step-image-link" href="assets/accessibility/open-settings.webp" target="_blank" rel="noopener" aria-label="打开 Step 1 原尺寸示意图">
+                        <img src="assets/accessibility/open-settings.webp" alt="Apple 菜单中已高亮系统设置" width="1536" height="1024">
+                    </a>
+                    <figcaption>Melo 可能已经为你打开了这个页面。</figcaption>
+                </figure>
             </div>
             <div class="step">
                 <strong>2. 进入隐私与安全性 &rarr; 辅助功能</strong>
                 <p>在左侧边栏找到并点击 <strong>隐私与安全性</strong>，然后在右侧选择 <strong>辅助功能</strong>。</p>
+                <figure>
+                    <a class="step-image-link" href="assets/accessibility/open-accessibility.webp" target="_blank" rel="noopener" aria-label="打开 Step 2 原尺寸示意图">
+                        <img src="assets/accessibility/open-accessibility.webp" alt="系统设置中已高亮隐私与安全性和辅助功能" width="1536" height="1024">
+                    </a>
+                    <figcaption>最新版 macOS 不再需要单独执行解锁操作。</figcaption>
+                </figure>
             </div>
             <div class="step">
-                <strong>3. 解锁设置面板</strong>
-                <p>点击左下角的锁图标，输入 Mac 密码或使用触控 ID 解锁。</p>
-            </div>
-            <div class="step">
-                <strong>4. 将 Melo 添加到列表</strong>
+                <strong>3. 将 Melo 添加到列表</strong>
                 <p>点击应用列表下方的 <strong>+</strong> 按钮。在文件选择器中打开 <strong>应用程序</strong> 文件夹，选中你正在使用的 Melo 应用（例如 <strong>Melo Suite</strong> 或 <strong>Melo Clip</strong>），然后点击 <strong>打开</strong>。</p>
+                <figure>
+                    <a class="step-image-link" href="assets/accessibility/add-melo.webp" target="_blank" rel="noopener" aria-label="打开 Step 3 原尺寸示意图">
+                        <img src="assets/accessibility/add-melo.webp" alt="在辅助功能设置中通过应用程序文件夹添加 Melo Suite" width="1536" height="1024">
+                    </a>
+                    <figcaption>请选择与你当前正在运行的版本一致的 Melo 应用。</figcaption>
+                </figure>
             </div>
             <div class="step">
-                <strong>5. 打开开关</strong>
-                <p>回到辅助功能列表，确保 <strong>Melo Suite</strong> 右侧的开关处于<strong>打开</strong>状态。</p>
+                <strong>4. 打开开关</strong>
+                <p>回到辅助功能列表，确保刚刚添加的 Melo 应用右侧开关处于<strong>打开</strong>状态。</p>
+                <figure>
+                    <a class="step-image-link" href="assets/accessibility/enable-melo.webp" target="_blank" rel="noopener" aria-label="打开 Step 4 原尺寸示意图">
+                        <img src="assets/accessibility/enable-melo.webp" alt="macOS 辅助功能列表中的 Melo Suite 开关已打开" width="1536" height="1024">
+                    </a>
+                    <figcaption>辅助功能开启后，开关会显示为蓝色。</figcaption>
+                </figure>
             </div>
             <div class="step">
-                <strong>6. 重新启动 Melo</strong>
+                <strong>5. 重新启动 Melo</strong>
                 <p>完全退出 Melo（按 <kbd>&#8984;</kbd>+<kbd>Q</kbd>），然后重新打开。macOS 每次启动 app 都会重新检查辅助功能授权。</p>
+                <figure>
+                    <a class="step-image-link" href="assets/accessibility/restart-melo.webp" target="_blank" rel="noopener" aria-label="打开 Step 5 原尺寸示意图">
+                        <img src="assets/accessibility/restart-melo.webp" alt="Melo Suite 菜单中的退出选项已高亮，Dock 中显示 Melo Suite 图标" width="1536" height="1024">
+                    </a>
+                    <figcaption>完全退出后，再从 Dock 或“应用程序”重新打开 Melo。</figcaption>
+                </figure>
             </div>
             <div class="step">
-                <strong>7. 尝试自动粘贴</strong>
+                <strong>6. 尝试自动粘贴</strong>
                 <p>打开剪贴板面板，点击任意一条历史记录，Melo 会自动把它粘贴到当前聚焦的 app 中。</p>
             </div>
 
